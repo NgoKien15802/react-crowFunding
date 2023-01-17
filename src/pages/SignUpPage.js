@@ -7,16 +7,32 @@ import FormGroup from "~/components/common/FormGroup";
 import Input from "~/components/input/Input";
 import Label from "~/components/label/Label";
 import LayoutAuthentication from "~/layout/LayoutAuthentication";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object({
+    name: yup.string().required("This field is required"),
+    email: yup
+        .string()
+        .email("Invalid email address")
+        .required("This field is required"),
+    password: yup
+        .string()
+        .min(8, "Password must be 8 characters")
+        .required("This field is required"),
+});
 
 const SignUpPage = () => {
     const {
         handleSubmit,
         control,
-        // formState: { isValid, isSubmitting },
-    } = useForm({});
+        formState: { errors, isSubmitting },
+    } = useForm({
+        resolver: yupResolver(schema),
+    });
 
     const handleSignUp = (values) => {
-        console.log("handleSignUp ~ values", values);
+        console.log(values);
     };
 
     const [acceptTerm, setAcceptTerm] = useState(false);
@@ -50,6 +66,7 @@ const SignUpPage = () => {
                         control={control}
                         name="name"
                         placeholder="Enter your fullname..."
+                        error={errors?.name?.message}
                     ></Input>
                 </FormGroup>
                 <FormGroup>
@@ -59,6 +76,7 @@ const SignUpPage = () => {
                         name="email"
                         type="email"
                         placeholder="Enter your email..."
+                        error={errors?.email?.message}
                     ></Input>
                 </FormGroup>
                 <FormGroup>
@@ -68,6 +86,7 @@ const SignUpPage = () => {
                         name="password"
                         type="password"
                         placeholder="Enter your password..."
+                        error={errors?.password?.message}
                     ></Input>
                 </FormGroup>
                 <div className="flex items-start mb-5 gap-x-5">
