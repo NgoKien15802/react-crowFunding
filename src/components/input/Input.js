@@ -1,6 +1,8 @@
 import React from "react";
 import { useController } from "react-hook-form";
 import PropsType from "prop-types";
+import { withErrorBoundary } from "react-error-boundary";
+import ErrorComponent from "../common/ErrorComponent";
 
 const Input = ({
     control,
@@ -8,6 +10,7 @@ const Input = ({
     name,
     error = "",
     placeholder = "",
+    children,
     ...props
 }) => {
     const { field } = useController({
@@ -20,16 +23,21 @@ const Input = ({
             <input
                 id={name}
                 type={type}
-                className={`w-full px-6 py-4 text-sm font-medium border border-strock rounded-xl text-text1 placeholder:text-text4 ${
-                    error.length > 0 ? "border-error" : ""
-                }`}
-                placeholder={error.length < 0 ? placeholder : ""}
+                className={`w-full px-6 py-4 text-sm font-medium border border-strock bg-transparent rounded-xl text-text1 dark:text-white dark:placeholder:text-text2  placeholder:text-text4 ${
+                    error.length > 0 ? "border-error" : "dark:border-darkStroke"
+                } ${children ? "pr-16" : ""}`}
+                placeholder={error.length <= 0 ? placeholder : ""}
                 {...field}
                 {...props}
             />
             {error.length > 0 && (
                 <span className="absolute text-sm font-medium pointer-events-none text-error top-2/4 -translate-y-2/4 left-6 error-input">
                     {error}
+                </span>
+            )}
+            {children && (
+                <span className="absolute cursor-pointer select-none right-6 top-2/4 -translate-y-2/4">
+                    {children}
                 </span>
             )}
         </div>
@@ -43,4 +51,6 @@ Input.propsType = {
     error: PropsType.string,
 };
 
-export default Input;
+export default withErrorBoundary(Input, {
+    FallbackComponent: <ErrorComponent></ErrorComponent>,
+});

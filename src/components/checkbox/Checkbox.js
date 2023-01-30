@@ -11,7 +11,9 @@ const Checkbox = ({
             <div
                 onClick={onClick}
                 className={`inline-flex items-center justify-center p-1 text-white w-5 h-5 border rounded cursor-pointer border-strock ${
-                    checked ? "bg-primary border-primary" : "border-strock"
+                    checked
+                        ? "bg-primary border-primary"
+                        : "border-strock dark:border-text3"
                 }`}
             >
                 <input
@@ -21,7 +23,7 @@ const Checkbox = ({
                     className="hidden"
                     id=""
                 />
-                <span>
+                <span className={`${checked ? "" : "opacity-0 invisible"}`}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
