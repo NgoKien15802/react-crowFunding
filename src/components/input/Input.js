@@ -24,7 +24,9 @@ const Input = ({
                 id={name}
                 type={type}
                 className={`w-full px-6 py-4 text-sm font-medium border border-strock bg-transparent rounded-xl text-text1 dark:text-white dark:placeholder:text-text2  placeholder:text-text4 ${
-                    error.length > 0 ? "border-error" : "dark:border-darkStroke"
+                    error.length > 0
+                        ? "border-error text-error"
+                        : "dark:border-darkStroke border-strock text-text1"
                 } ${children ? "pr-16" : ""}`}
                 placeholder={error.length <= 0 ? placeholder : ""}
                 {...field}

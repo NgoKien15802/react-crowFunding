@@ -10,7 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Checkbox } from "~/components/checkbox";
-import { Button } from "~/components/button";
+import { Button, ButtonGoogle } from "~/components/button";
 
 const schema = yup.object({
     name: yup.string().required("This field is required"),
@@ -54,10 +54,7 @@ const SignUpPage = () => {
                     Sign in
                 </Link>
             </p>
-            <button className="flex items-center justify-center w-full py-4 mb-5 text-base font-semibold border text-text2 border-strock dark:border-darkStroke rounded-xl dark:text-white gap-x-2">
-                <img src="/google.png" alt="google" className="" />
-                <span>Sign up with google</span>
-            </button>
+            <ButtonGoogle></ButtonGoogle>
             <p className="mb-4 text-xs font-normal text-center dark:text-white lg:text-sm lg:mb-8 text-text2 ">
                 Or sign up with email
             </p>
