@@ -6,3 +6,4 @@ export { default as IconWithDraw } from "./IconWithDraw";
 export { default as IconProfile } from "./IconProfile";
 export { default as IconLogout } from "./IconLogout";
 export { default as IconDarkMode } from "./IconDarkMode";
+export { default as IconFolder } from "./IconFolder";
