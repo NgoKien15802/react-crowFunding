@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "~/utils/classNames";
 
 const Checkbox = ({
     checked = false,
@@ -10,11 +11,12 @@ const Checkbox = ({
         <div className="flex items-center gap-x-5">
             <div
                 onClick={onClick}
-                className={`inline-flex items-center justify-center p-1 text-white w-5 h-5 border rounded cursor-pointer border-strock ${
+                className={classNames(
+                    "inline-flex items-center justify-center p-1 text-white w-5 h-5 border rounded cursor-pointer border-strock",
                     checked
                         ? "bg-primary border-primary"
                         : "border-strock dark:border-text3"
-                }`}
+                )}
             >
                 <input
                     onChange={() => {}}
