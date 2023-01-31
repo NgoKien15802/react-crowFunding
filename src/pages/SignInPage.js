@@ -9,7 +9,7 @@ import * as yup from "yup";
 import LayoutAuthentication from "~/layout/LayoutAuthentication";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useToggleValue from "~/hooks/useToggleValue";
-import IconEyeToggle from "~/components/icons/IconEyeToggle";
+import { IconEyeToggle } from "~/components/icons";
 
 const schema = yup.object({
     email: yup.string().email("").required("This field is required"),

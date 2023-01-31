@@ -3,7 +3,6 @@ import React from "react";
 import LayoutAuthentication from "~/layout/LayoutAuthentication";
 import Label from "~/components/label/Label";
 import Input from "~/components/input/Input";
-import IconEyeToggle from "~/components/icons/IconEyeToggle";
 import FormGroup from "~/components/common/FormGroup";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -11,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Checkbox } from "~/components/checkbox";
 import { Button, ButtonGoogle } from "~/components/button";
+import { IconEyeToggle } from "~/components/icons";
 
 const schema = yup.object({
     name: yup.string().required("This field is required"),
