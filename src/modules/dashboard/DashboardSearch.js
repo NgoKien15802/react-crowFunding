@@ -3,7 +3,7 @@ import { useState } from "react";
 import { defaultImage } from "~/constants/global";
 
 const DashboardSearch = () => {
-    const [showSearch, setShowSearch] = useState(true);
+    const [showSearch, setShowSearch] = useState(false);
     return (
         <div className="relative z-50">
             <div className="flex items-center w-full p-2 bg-white rounded-full shadow-sdPrimary">
