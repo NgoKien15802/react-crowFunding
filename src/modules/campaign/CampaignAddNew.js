@@ -12,6 +12,7 @@ import { Input, Textarea } from "~/components/input";
 import { Label } from "~/components/label";
 import axios from "axios";
 import { useState } from "react";
+import { Button } from "~/components/button";
 Quill.register("modules/imageUploader", ImageUploader);
 
 const CampaignAddNew = () => {
@@ -99,6 +100,102 @@ const CampaignAddNew = () => {
                             modules={modules}
                         />
                     </FormGroup>
+                    <FormRow>
+                        <FormGroup>
+                            <Label className="text-left">Goal *</Label>
+                            <Input
+                                control={control}
+                                name="goal"
+                                placeholder="$0.00 USD"
+                            ></Input>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="text-left">Raised Amount *</Label>
+                            <Input
+                                control={control}
+                                name="amount"
+                                placeholder="$0.00 USD"
+                            ></Input>
+                        </FormGroup>
+                    </FormRow>
+                    <FormRow>
+                        <FormGroup>
+                            <Label className="text-left">
+                                Amount Prefilled
+                            </Label>
+                            <Input
+                                control={control}
+                                name="prefilled"
+                                placeholder="Amount Prefilled"
+                            ></Input>
+                            <p className="text-sm text-left text-text3">
+                                It will help fill amount box by click, place
+                                each amount by comma, ex: 10,20,30,40
+                            </p>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="text-left">Video</Label>
+                            <Input
+                                control={control}
+                                name="video"
+                                placeholder="Video"
+                            ></Input>
+                            <p className="text-sm text-left text-text3">
+                                Place Youtube or Vimeo Video URL
+                            </p>
+                        </FormGroup>
+                    </FormRow>
+                    <FormRow>
+                        <FormGroup>
+                            <Label className="text-left">
+                                Campaign End Method
+                            </Label>
+                            <Dropdown>
+                                <Select placeholder="Select one"></Select>
+                                <List>
+                                    <Option>Select</Option>
+                                    <Option>Crypto</Option>
+                                </List>
+                            </Dropdown>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="text-left">Counrty</Label>
+                            <Dropdown>
+                                <Select placeholder="Select a country"></Select>
+                                <List>
+                                    <Option>Architecture</Option>
+                                    <Option>Crypto</Option>
+                                </List>
+                            </Dropdown>
+                        </FormGroup>
+                    </FormRow>
+                    <FormRow>
+                        <FormGroup>
+                            <Label className="text-left">Start Date</Label>
+                            <Input
+                                control={control}
+                                name="start_date"
+                                placeholder="Start Date"
+                            ></Input>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="text-left">End Date</Label>
+                            <Input
+                                control={control}
+                                name="end_date"
+                                placeholder="End Date"
+                            ></Input>
+                        </FormGroup>
+                    </FormRow>
+                    <div className="mt-10">
+                        <Button
+                            type="button"
+                            kind="primary"
+                            className="px-10 mx-auto"
+                        >
+                            Submit new campaign{" "}
+                        </Button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Button } from "~/components/button";
 
 import Heading from "~/components/common/Heading";
@@ -8,7 +8,7 @@ import CampaignGrid from "~/modules/campaign/CampaignGrid";
 
 const CampaignPage = () => {
     return (
-        <LayoutDashboard>
+        <Fragment>
             <div className="flex items-center justify-between px-10 py-8 mb-10 bg-white rounded-3xl">
                 <div className="flex items-start gap-x-6">
                     <div className="flex items-center justify-center text-white rounded-full bg-secondary bg-opacity-60 w-14 h-14">
@@ -61,7 +61,7 @@ const CampaignPage = () => {
                     </svg>
                 </Button>
             </div>
-        </LayoutDashboard>
+        </Fragment>
     );
 };
 
