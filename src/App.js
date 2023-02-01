@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import CampaignPage from "./pages/CampaignPage";
+import StartCampaignPage from "./pages/StartCampaignPage";
 
 const SignUpPage = lazy(() => import("./pages/SignUpPage"));
 const SignInPage = lazy(() => import("./pages/SignInPage"));
@@ -17,6 +18,10 @@ function App() {
                 <Route
                     path="/campaign"
                     element={<CampaignPage></CampaignPage>}
+                ></Route>
+                <Route
+                    path="/start-campaign"
+                    element={<StartCampaignPage></StartCampaignPage>}
                 ></Route>
                 <Route
                     path="/sign-up"
