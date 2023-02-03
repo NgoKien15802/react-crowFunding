@@ -1,6 +1,10 @@
 import React, { Fragment } from "react";
 import { Button } from "~/components/button";
 import { defaultImage } from "~/constants/global";
+import CampaignGrid from "./CampaignGrid";
+import CampaignItem from "./CampaignItem";
+import CampaignPerk from "./CampaignPerk";
+import CampaignSupport from "./CampaignSupport";
 import CampCategory from "./parts/CampCategory";
 import CampDesc from "./parts/CampDesc";
 import CampImage from "./parts/CampImage";
@@ -19,7 +23,7 @@ const CampaignView = () => {
             >
                 <h1> Education</h1>
             </div>
-            <div className="flex items-start gap-x-[40px] w-full max-w-[1066px]">
+            <div className="flex items-start gap-x-[40px] w-full max-w-[1066px] ">
                 <div className="flex-1">
                     <CampImage className="h-[398px] mb-8"></CampImage>
                     <div className="flex justify-center gap-x-5">
@@ -60,6 +64,43 @@ const CampaignView = () => {
                     </Button>
                 </div>
             </div>
+
+            <div className="flex items-center justify-between mt-[100px] mb-6 p-5 shadow-sm border-b border-b-slate-100">
+                <div className="flex items-center font-medium gap-x-14 text-text3">
+                    <span className="cursor-pointer text-secondary">
+                        Campaign
+                    </span>
+                </div>
+                <Button className="text-right" kind="primary">
+                    Back this project
+                </Button>
+            </div>
+            <div className="grid gap-x-[124px] grid-cols-[1.3fr,1fr] mb-[70px]">
+                <div>
+                    <h2 className="text-lg mb-5 font-semibold uppercase">
+                        Story
+                    </h2>
+                    <div className="bg-white w-full"></div>
+                </div>
+                <div>
+                    <CampaignSupport></CampaignSupport>
+                    <div className="mb-[60px]"></div>
+                    <div className="flex flex-col gap-y-[30px]">
+                        <CampaignPerk></CampaignPerk>
+                        <CampaignPerk></CampaignPerk>
+                        <CampaignPerk></CampaignPerk>
+                    </div>
+                </div>
+            </div>
+            <h2 className="mb-10 text-xl font-semibold">
+                You also may be interested in
+            </h2>
+            <CampaignGrid>
+                <CampaignItem></CampaignItem>
+                <CampaignItem></CampaignItem>
+                <CampaignItem></CampaignItem>
+                <CampaignItem></CampaignItem>
+            </CampaignGrid>
         </Fragment>
     );
 };
