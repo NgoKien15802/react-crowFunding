@@ -15,12 +15,7 @@ import CampViewAuthor from "./parts/CampViewAuthor";
 const CampaignView = () => {
     return (
         <Fragment>
-            <div
-                className="mb-10 h-[140px] text-[40px] font-bold rounded-3xl bg-no-repeat object-cover bg-center  flex items-center justify-center text-white"
-                style={{
-                    backgroundImage: `linear-gradient(179.14deg,rgba(32, 18, 63, 0) -7.14%,rgba(0,0,0,0.5) 87.01%),url(/PlaceHolder.png)`,
-                }}
-            >
+            <div className="mb-10 h-[140px] text-[40px] font-bold rounded-3xl bg-no-repeat gradient-banner object-cover bg-center  flex items-center justify-center text-white">
                 <h1> Education</h1>
             </div>
             <div className="flex items-start gap-x-[40px] w-full max-w-[1066px] ">
@@ -77,10 +72,10 @@ const CampaignView = () => {
             </div>
             <div className="grid gap-x-[124px] grid-cols-[1.3fr,1fr] mb-[70px]">
                 <div>
-                    <h2 className="text-lg mb-5 font-semibold uppercase">
+                    <h2 className="mb-5 text-lg font-semibold uppercase">
                         Story
                     </h2>
-                    <div className="bg-white w-full"></div>
+                    <div className="w-full bg-white"></div>
                 </div>
                 <div>
                     <CampaignSupport></CampaignSupport>

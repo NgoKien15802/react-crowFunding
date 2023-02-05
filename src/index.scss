@@ -43,3 +43,12 @@ input:focus + .error-input {
     box-shadow: -4px 4px 8px rgba(226, 226, 226, 0.2),
         4px 4px 8px rgba(226, 226, 226, 0.2);
 }
+
+.gradient-banner {
+    background-image: linear-gradient(
+            179.14deg,
+            rgba(32, 18, 63, 0) -7.14%,
+            rgba(0, 0, 0, 0.5) 87.01%
+        ),
+        url("https://tse1.mm.bing.net/th?id=OIP.fej5pErqkHL9CTmDpvWVWwHaCq&pid=Api&rs=1&c=1&qlt=95&w=213&h=76");
+}
