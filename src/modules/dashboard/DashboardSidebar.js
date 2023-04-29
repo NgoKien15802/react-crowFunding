@@ -39,7 +39,7 @@ const sidebarLinks = [
     {
         icon: <IconLogout></IconLogout>,
         title: "Logout",
-        url: "/logout",
+        url: "/sign-in",
         onclick: () => {},
     },
     {
