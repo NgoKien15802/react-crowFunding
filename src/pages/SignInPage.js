@@ -78,7 +78,12 @@ const SingInPage = () => {
                         </span>
                     </div>
                 </FormGroup>
-                <Button type="submit" className="w-full" kind="primary">
+                <Button
+                    href="/"
+                    type="submit"
+                    className="w-full"
+                    kind="primary"
+                >
                     Sign in
                 </Button>
             </form>
